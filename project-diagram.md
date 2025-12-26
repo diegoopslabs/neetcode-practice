@@ -63,10 +63,10 @@ graph TD
 ```mermaid
 flowchart TD
     Start([Inicio: IsPalindrome]) --> Normalize[Normalizar string<br/>normalizeString]
-    Normalize --> Init[Inicializar:<br/>left = 0<br/>right = len-1]
+    Normalize --> Init["Inicializar:<br/>left = 0<br/>right = len-1"]
     Init --> Loop{left < right?}
-    Loop -->|Sí| Compare{s[left] == s[right]?}
-    Compare -->|Sí| Increment[left++<br/>right--]
+    Loop -->|Sí| Compare{"s[left] == s[right]?"}
+    Compare -->|Sí| Increment["left++<br/>right--"]
     Increment --> Loop
     Compare -->|No| ReturnFalse([Return false])
     Loop -->|No| ReturnTrue([Return true])
@@ -81,11 +81,11 @@ flowchart TD
 ```mermaid
 flowchart TD
     Start([Inicio: IsPalindromeRecursive]) --> Normalize[Normalizar string<br/>normalizeString]
-    Normalize --> CallHelper[Llamar isPalindromeHelper<br/>left=0, right=len-1]
-    CallHelper --> BaseCase{left >= right?}
+    Normalize --> CallHelper["Llamar isPalindromeHelper<br/>left=0, right=len-1"]
+    CallHelper --> BaseCase{"left >= right?"}
     BaseCase -->|Sí| ReturnTrue1([Return true<br/>Caso base])
-    BaseCase -->|No| Compare{s[left] == s[right]?}
-    Compare -->|Sí| Recurse[Llamada recursiva<br/>left+1, right-1]
+    BaseCase -->|No| Compare{"s[left] == s[right]?"}
+    Compare -->|Sí| Recurse["Llamada recursiva<br/>left+1, right-1"]
     Recurse --> BaseCase
     Compare -->|No| ReturnFalse([Return false])
 
